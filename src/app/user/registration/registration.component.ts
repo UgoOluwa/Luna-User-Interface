@@ -5,7 +5,7 @@ import { ToastrService } from "ngx-toastr";
 @Component({
   selector: "app-registration",
   templateUrl: "./registration.component.html",
-  styleUrls: ["./registration.component.css"]
+  styleUrls: []
 })
 export class RegistrationComponent implements OnInit {
   constructor(public service: UserService, private toastr: ToastrService) {}
@@ -25,7 +25,7 @@ export class RegistrationComponent implements OnInit {
             switch (element.code) {
               case "DuplicateUserName":
                 this.toastr.error(
-                  "Username is already taken",
+                  "Email is already taken",
                   "Registration failed."
                 );
                 break;
