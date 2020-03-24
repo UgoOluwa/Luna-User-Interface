@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/shared/user.service';
 import { ToastrService } from "ngx-toastr";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-registration",
@@ -8,9 +9,15 @@ import { ToastrService } from "ngx-toastr";
   styleUrls: []
 })
 export class RegistrationComponent implements OnInit {
-  constructor(public service: UserService, private toastr: ToastrService) {}
+  constructor(
+    public service: UserService,
+    private router: Router,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit() {
+    if (localStorage.getItem("token") != null)
+      this.router.navigateByUrl("/home");
     this.service.formModel.reset();
   }
 
