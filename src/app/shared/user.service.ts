@@ -53,7 +53,8 @@ export class UserService {
     var tokenHeader = new HttpHeaders({
       Authorization: "Bearer" + localStorage.getItem("token")
     });
-    return this.http.get(this.BaseURI + "/UserProfile", {
+    console.log(tokenHeader);
+    return this.http.get(this.BaseURI + "/user", {
       headers: tokenHeader
     });
   }

@@ -34,7 +34,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule
   ],
   providers: [
-    UserService
+    // UserService
     // {
     //   provide: HTTP_INTERCEPTORS,
     //   useClass: AuthInterceptor,
