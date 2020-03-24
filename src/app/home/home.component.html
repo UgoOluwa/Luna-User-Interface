@@ -5,12 +5,13 @@
           <a class="nav-link" routerLink="/adminpanel">Admin Panel</a>
       </li>
   </ul> -->
+  <a href="" class="navbar-brand text-white my2 my-sm-0" *ngIf="userDetails">Welcome {{userDetails.firstName}} </a>
   <button class="btn btn-danger my2 my-sm-0" (click)="onLogout()">Logout</button>
 </nav>
 
 <div class=" jumbotron" *ngIf="userDetails">
     <ul class="list-group">
-        <li class="list-group-item"><strong>Fullname: </strong> {{userDetails.firstName}} {{userDetails.lastName} </li>
+        <li class="list-group-item"><strong>Fullname: </strong> {{userDetails.firstName}} {{userDetails.lastName}} </li>
         <li class="list-group-item"><strong>Email: </strong> {{userDetails.email}} </li>
 
     </ul>
